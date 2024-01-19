@@ -10,6 +10,10 @@ TagManager:
   - EnemySpawner
   - IntroUI
   - AudioManager
+  - LobbyAnimation
+  - AnimationL2R
+  - BossHealthBar
+  - PlayerHealthBar
   layers:
   - Default
   - TransparentFX
@@ -46,6 +50,9 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: UI
+    uniqueID: 3535579423
     locked: 0
   - name: BG
     uniqueID: 3299166447

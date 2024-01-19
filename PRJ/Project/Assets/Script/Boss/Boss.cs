@@ -9,12 +9,17 @@ public class Boss : MonoBehaviour
     [SerializeField] private float specialAttackCD;
     private float specialAttackCDTimer;
     private float currentMovementSpeed;
+    public HealthBar BossHealthBar;
+
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         Animator = GetComponent<Animator>();
         Attribute = GetComponent<Attribute>();
+        UIManager.EnableBossHealthBar();
+        BossHealthBar = GameObject.FindGameObjectWithTag("BossHealthBar").GetComponent<HealthBar>();
+        BossHealthBar.SetMaxHealth(Attribute.MaxHealth);
     }
 
     // Update is called once per frame
@@ -49,6 +54,7 @@ public class Boss : MonoBehaviour
 
     private void CheckDied()
     {
+        BossHealthBar.SetHealth(Attribute.Health);
         if (Attribute.Health <= 0)
         {
             LevelManager.Win();

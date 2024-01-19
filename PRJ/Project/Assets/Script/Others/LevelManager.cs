@@ -6,8 +6,6 @@ using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour
 {
     public static string levelStatus;
-    private EnemySpawner EnemySpawner;
-
     void Awake()
     {
         levelStatus = "Waiting";
@@ -22,10 +20,6 @@ public class LevelManager : MonoBehaviour
             case "Playing":
                 break;
             default:
-                if (Input.GetMouseButtonDown(0))
-                {
-                    SceneManager.LoadScene(0);
-                }
                 break;
         }
     }
